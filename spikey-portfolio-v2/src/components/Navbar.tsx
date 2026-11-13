@@ -67,7 +67,7 @@ export function Navbar({ active }: NavbarProps) {
               Available for Projects
             </span>
           )}
-          <a href="#contact" className="btn btn--ink btn--sm nav__cta">
+          <a href="#contact" className="btn btn--pink btn--sm nav__cta">
             Let's Talk <ArrowUpRight size={16} aria-hidden="true" />
           </a>
           <button
@@ -104,7 +104,7 @@ export function Navbar({ active }: NavbarProps) {
               Available for Projects
             </span>
           )}
-          <a href="#contact" className="btn btn--paper" onClick={close}>
+          <a href="#contact" className="btn btn--pink" onClick={close}>
             Let's Talk <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>

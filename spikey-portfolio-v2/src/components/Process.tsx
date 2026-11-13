@@ -56,7 +56,7 @@ export function Process() {
             <path
               d="M40 40 C 160 -10, 240 90, 370 40 S 580 -10, 630 40 S 840 90, 960 40"
               fill="none"
-              stroke="#080808"
+              stroke="#6A626A"
               strokeWidth="3"
               strokeDasharray="10 12"
               strokeLinecap="round"

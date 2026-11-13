@@ -16,6 +16,7 @@ export function Hero() {
       <Sparkle className="hero__deco hero__deco--sparkle float float--slow" color="#5865F2" />
       <span className="hero__deco hero__deco--dot float" aria-hidden="true" />
       <span className="hero__deco hero__deco--ring float float--slow" aria-hidden="true" />
+      <span className="hero__deco hero__deco--tri float" aria-hidden="true" />
 
       <div className="hero__inner container">
         <div className="hero__copy">
@@ -27,9 +28,9 @@ export function Hero() {
           </p>
 
           <h1 id="hero-title" className="hero__title intro-anim" style={{ animationDelay: '80ms' }}>
-            <span className="hero__title-line">Hey! I'm</span>{' '}
+            <span className="hero__title-line">HEY! I'M</span>{' '}
             <span className="hero__name">
-              SPIKEY
+              SPIKEY<span className="hero__dot">.</span>
               <Underline className="hero__underline draw" color="#FFE36E" />
             </span>
           </h1>
@@ -55,6 +56,8 @@ export function Hero() {
         </div>
 
         <div className="hero__visual intro-anim" style={{ animationDelay: '200ms' }}>
+          <span className="hero__backdrop" aria-hidden="true" />
+          <Sparkle className="hero__visual-sparkle float float--slow" color="#FFE36E" />
           <div className={`hero__frame hero__frame--${imageState}`}>
             {imageState !== 'error' ? (
               <img
@@ -102,7 +105,7 @@ export function Hero() {
 
           <div className="hero__note" aria-hidden="true">
             <span>that's me!</span>
-            <CurlyArrow className="hero__note-arrow" color="#080808" />
+            <CurlyArrow className="hero__note-arrow" color="#FAF8F8" />
           </div>
 
           <Smiley className="hero__smiley float" color="#FFE36E" />

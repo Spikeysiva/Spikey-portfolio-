@@ -1,15 +1,30 @@
 /* ============================================================
-   SPIKEY Portfolio V2 — global styles & design tokens
+   SPIKEY Portfolio V2 — global styles & design tokens (dark theme)
    ============================================================ */
 
 :root {
+  /* surfaces */
+  --bg: #131313; /* main background */
+  --surface: #1b1b1b; /* secondary background */
+  --card: #222222; /* cards */
+  --night: #0c0c0c; /* footer / deepest */
+  --line: #383438; /* borders */
+
+  /* text */
+  --text: #faf8f8;
+  --text-2: #b8b5b8;
+
+  /* accents */
   --pink: #ff007f;
-  --ink: #080808;
-  --paper: #faf8f5;
+  --magenta: #c31fa6;
   --yellow: #ffe36e;
   --blue: #5865f2;
   --orange: #ff814a;
-  --muted: rgba(8, 8, 8, 0.64);
+
+  /* legacy aliases (artwork + small details) */
+  --ink: #131313;
+  --paper: #faf8f8;
+  --muted: var(--text-2);
 
   --font-display: 'Bricolage Grotesque', 'Arial Rounded MT Bold', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -22,7 +37,7 @@
   --nav-h: 80px;
   --section-y: clamp(80px, 11vw, 150px);
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 *,
@@ -34,12 +49,13 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background: var(--bg);
 }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
@@ -69,11 +85,11 @@ button {
 
 ::selection {
   background: var(--pink);
-  color: var(--paper);
+  color: var(--text);
 }
 
 :focus-visible {
-  outline: 3px solid var(--blue);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
 }
 
@@ -108,8 +124,8 @@ form[id] {
   z-index: 100;
   padding: 10px 16px;
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--pink);
+  color: var(--text);
   font-weight: 700;
   transform: translateY(-160%);
   transition: transform 0.2s ease;
@@ -131,10 +147,6 @@ form[id] {
   text-align: center;
 }
 
-.section-head--light .section-lede {
-  color: rgba(250, 248, 245, 0.7);
-}
-
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -142,17 +154,16 @@ form[id] {
   margin-bottom: 16px;
   padding: 6px 14px 6px 10px;
   border-radius: 999px;
-  border: 2px solid var(--ink);
-  background: #fff;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--text);
   font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .eyebrow--light {
-  background: transparent;
-  border-color: currentColor;
   padding-left: 14px;
 }
 
@@ -168,12 +179,13 @@ form[id] {
   font-size: clamp(2.6rem, 6.4vw, 5.4rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
+  color: var(--text);
 }
 
 .section-lede {
   margin: 20px 0 0;
   font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-  color: var(--muted);
+  color: var(--text-2);
   max-width: 46ch;
 }
 
@@ -190,8 +202,22 @@ form[id] {
   color: var(--blue);
 }
 
+.hl-yellow {
+  color: var(--yellow);
+}
+
+/* sticker-style highlight block */
+.hl-block {
+  display: inline-block;
+  padding: 0 0.16em 0.04em;
+  border-radius: 0.2em;
+  background: var(--pink);
+  color: var(--text);
+  transform: rotate(-2deg);
+}
+
 .marker {
-  background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 92%, transparent 92%);
+  background: linear-gradient(transparent 60%, var(--magenta) 60%, var(--magenta) 94%, transparent 94%);
   padding: 0 0.08em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -199,16 +225,17 @@ form[id] {
 
 /* ---------- Buttons ---------- */
 .btn {
-  --btn-bg: var(--ink);
-  --btn-fg: var(--paper);
-  --btn-shadow: var(--ink);
+  --btn-bg: var(--card);
+  --btn-fg: var(--text);
+  --btn-border: var(--line);
+  --btn-shadow: var(--pink);
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 13px 22px;
   border-radius: 999px;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--btn-border);
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-weight: 700;
@@ -221,7 +248,8 @@ form[id] {
     transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
     background 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btn svg {
@@ -253,38 +281,46 @@ form[id] {
   font-size: 1.05rem;
 }
 
+/* primary: hot pink */
 .btn--pink {
   --btn-bg: var(--pink);
-  --btn-fg: var(--paper);
+  --btn-fg: var(--text);
+  --btn-border: var(--pink);
+  --btn-shadow: var(--yellow);
 }
 
+/* dark surface button */
 .btn--ink {
-  --btn-shadow: var(--pink);
+  --btn-bg: var(--card);
+  --btn-fg: var(--text);
+  --btn-border: var(--line);
 }
 
-.btn--outline {
-  --btn-bg: transparent;
-  --btn-fg: var(--ink);
+.btn--ink:hover {
+  --btn-border: var(--pink);
 }
 
-.btn--outline:hover {
-  --btn-bg: var(--yellow);
-}
-
+/* light button (used on pink surfaces) */
 .btn--paper {
-  --btn-bg: var(--paper);
-  --btn-fg: var(--ink);
+  --btn-bg: var(--text);
+  --btn-fg: var(--bg);
+  --btn-border: var(--text);
+  --btn-shadow: var(--bg);
 }
 
+.btn--outline,
 .btn--outline-light {
   --btn-bg: transparent;
-  --btn-fg: var(--paper);
-  border-color: var(--paper);
+  --btn-fg: var(--text);
+  --btn-border: var(--text);
 }
 
+.btn--outline:hover,
 .btn--outline-light:hover {
-  --btn-bg: var(--paper);
-  --btn-fg: var(--ink);
+  --btn-bg: var(--yellow);
+  --btn-fg: var(--bg);
+  --btn-border: var(--yellow);
+  --btn-shadow: var(--pink);
 }
 
 /* ---------- Motion ---------- */

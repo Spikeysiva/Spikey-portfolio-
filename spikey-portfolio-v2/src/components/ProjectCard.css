@@ -20,12 +20,27 @@
   --art-ratio: 21 / 8;
 }
 
+/* dark card container around the bright artwork */
 .pcard__link {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-radius: var(--radius-xl);
+  padding: 12px;
+  border-radius: calc(var(--radius-xl) + 8px);
+  background: var(--card);
+  border: 1.5px solid var(--line);
   outline-offset: 6px;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.3s ease,
+    box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pcard__link:hover,
+.pcard__link:focus-visible {
+  transform: translateY(-6px) rotate(-0.5deg);
+  border-color: var(--pink);
+  box-shadow: 8px 10px 0 var(--pink);
 }
 
 .pcard__media {
@@ -33,11 +48,7 @@
   aspect-ratio: var(--art-ratio);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 3px solid var(--ink);
   isolation: isolate;
-  transition:
-    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .pcard__img {
@@ -48,15 +59,9 @@
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.pcard__link:hover .pcard__media,
-.pcard__link:focus-visible .pcard__media {
-  transform: translateY(-6px) rotate(-0.6deg);
-  box-shadow: 8px 10px 0 var(--ink);
-}
-
 .pcard__link:hover .pcard__img,
 .pcard__link:focus-visible .pcard__img {
-  transform: scale(1.05);
+  transform: scale(1.06) rotate(1deg);
 }
 
 .pcard__badge {
@@ -65,12 +70,12 @@
   left: 16px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(250, 248, 245, 0.92);
-  color: var(--ink);
+  background: rgba(19, 19, 19, 0.88);
+  color: var(--text);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  border: 2px dashed var(--ink);
+  border: 1.5px dashed var(--yellow);
 }
 
 .pcard__num {
@@ -82,8 +87,8 @@
   font-size: 1rem;
   padding: 6px 10px;
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--bg);
+  color: var(--text);
 }
 
 .pcard__view {
@@ -95,11 +100,11 @@
   gap: 6px;
   padding: 12px 20px;
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--pink);
+  color: var(--text);
   font-weight: 700;
   font-size: 0.95rem;
-  transform: translate(-50%, 160%);
+  transform: translate(-50%, 180%);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   white-space: nowrap;
 }
@@ -114,17 +119,21 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
-  padding: 20px 8px 0;
+  padding: 20px 12px 12px;
 }
 
 .pcard__cat {
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   padding: 4px 12px;
   border-radius: 999px;
-  border: 2px solid var(--ink);
-  font-size: 0.78rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--pink);
+  font-size: 0.74rem;
   font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .pcard__title {
@@ -134,11 +143,12 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.05;
+  color: var(--text);
 }
 
 .pcard__summary {
   margin: 8px 0 0;
-  color: var(--muted);
+  color: var(--text-2);
   max-width: 52ch;
   font-size: 0.98rem;
 }
@@ -150,10 +160,12 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--line);
+  color: var(--text);
   transition:
     background 0.3s ease,
     color 0.3s ease,
+    border-color 0.3s ease,
     transform 0.3s ease;
 }
 
@@ -161,7 +173,6 @@
 .pcard__link:focus-visible .pcard__arrow {
   background: var(--pink);
   border-color: var(--pink);
-  color: var(--paper);
   transform: rotate(45deg);
 }
 
@@ -177,16 +188,11 @@
 }
 
 @media (max-width: 640px) {
-  .pcard,
-  .pcard--lg,
-  .pcard--md,
-  .pcard--sm,
-  .pcard--half,
-  .pcard--wide {
-    --art-ratio: 4 / 3;
-  }
   .pcard__view {
     display: none;
+  }
+  .pcard__link {
+    padding: 10px;
   }
 }
 

@@ -7,7 +7,7 @@
 
 .marquee {
   overflow: hidden;
-  border-block: 3px solid var(--ink);
+  border-block: 2px solid var(--bg);
   padding: 16px 0;
   user-select: none;
 }
@@ -20,7 +20,7 @@
 
 .marquee--pink {
   background: var(--pink);
-  color: var(--paper);
+  color: var(--text);
 }
 .marquee--ink {
   background: var(--ink);

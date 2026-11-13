@@ -1,5 +1,6 @@
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
+import { ExperimentLab } from '../components/ExperimentLab';
 import { Hero } from '../components/Hero';
 import { Marquee } from '../components/Marquee';
 import { Process } from '../components/Process';
@@ -13,6 +14,7 @@ export function HomePage() {
       <Hero />
       <Marquee />
       <ProjectGallery />
+      <ExperimentLab />
       <Services />
       <SoftwareGrid />
       <About />

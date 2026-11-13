@@ -17,7 +17,7 @@ export function About() {
     <section id="about" className="section about" aria-labelledby="about-title">
       <div className="container about__inner">
         <Reveal className="about__visual">
-          <Blob className="about__blob" color="#FFE36E" />
+          <Blob className="about__blob" color="#C31FA6" />
           <figure className="about__polaroid">
             {imgOk ? (
               <img
@@ -44,9 +44,9 @@ export function About() {
             </span>
             <h2 id="about-title" className="section-title about__title">
               A Little{' '}
-              <span className="about__about">
+              <span className="about__about hl-pink">
                 About Me
-                <Underline className="about__underline" color="#FF007F" />
+                <Underline className="about__underline" color="#FFE36E" />
               </span>
             </h2>
           </Reveal>

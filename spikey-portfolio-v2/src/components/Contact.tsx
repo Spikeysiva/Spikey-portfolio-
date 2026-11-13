@@ -114,7 +114,7 @@ export function Contact() {
             </p>
 
             <div className="contact__ctas">
-              <a href="#contact-form" className="btn btn--paper btn--lg" onClick={focusForm}>
+              <a href="#contact-form" className="btn btn--pink btn--lg" onClick={focusForm}>
                 Let's Talk <MessageCircle size={18} aria-hidden="true" />
               </a>
               {hasEmail ? (

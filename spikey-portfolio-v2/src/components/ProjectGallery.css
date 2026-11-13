@@ -19,7 +19,7 @@
 .work__hint-arrow {
   width: 84px;
   height: 64px;
-  color: var(--ink);
+  color: var(--text);
   transform: rotate(60deg);
 }
 

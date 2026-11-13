@@ -29,11 +29,26 @@ Anything you haven't set yet appears as a clearly marked placeholder, never a fa
 - If no email is set, the contact form still validates, then tells the visitor the email isn't configured yet.
 - Once an email is set, the form opens the visitor's email app with the message pre-filled. There's no backend. To use a form service such as Formspree or Netlify Forms instead, change `onSubmit` in `src/components/Contact.tsx`.
 
+## Theme
+
+The whole site uses a dark theme. Colours are CSS variables in `src/styles/global.css`:
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `--bg` | `#131313` | main background |
+| `--surface` | `#1B1B1B` | secondary background (Services / Contact panels) |
+| `--card` | `#222222` | cards, form, buttons |
+| `--text` / `--text-2` | `#FAF8F8` / `#B8B5B8` | primary / secondary text |
+| `--line` | `#383438` | borders |
+| `--pink` / `--magenta` | `#FF007F` / `#C31FA6` | main / secondary accent |
+| `--yellow` / `--blue` | `#FFE36E` / `#5865F2` | highlight accents |
+
 ## Structure
 
 ```
 src/
   components/   Navbar, Hero, Marquee, ProjectGallery, ProjectCard, ProjectArt,
+                ExperimentLab, LabArt,
                 Services, SoftwareGrid, SoftwareLogo, About, Process, Contact,
                 SocialLinks, Footer, Cursor, Reveal, Doodles   (each with its own .css)
   pages/        HomePage, ProjectPage
@@ -41,6 +56,9 @@ src/
   hooks/        useHashRoute, useActiveSection, useReducedMotion
   styles/       global.css   (design tokens, buttons, typography, animations)
 ```
+
+### Experiment Lab
+Five tall, original SVG panels (red checkerboard, orange waves, purple brush, cyan botanical, green type) live in `LabArt.tsx`. On desktop, hovering, focusing or clicking a panel expands it. On tablet and mobile they become a smooth-scrolling snap carousel with previous/next buttons.
 
 ### Routing
 - `#work`, `#about`, … scroll smoothly to sections on the home page.

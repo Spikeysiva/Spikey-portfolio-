@@ -5,8 +5,9 @@
 .services__panel {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
   border-radius: clamp(32px, 5vw, 64px);
   padding: var(--section-y) 0;
 }
@@ -14,7 +15,7 @@
 .services__for {
   position: relative;
   display: inline-block;
-  color: var(--ink);
+  color: var(--bg);
   background: var(--yellow);
   padding: 0 0.18em;
   border-radius: 0.2em;
@@ -34,18 +35,42 @@
   position: relative;
   padding: 26px 24px 28px;
   border-radius: var(--radius-lg);
-  background: #161616;
-  border: 2px solid #262626;
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  overflow: hidden;
   transition:
     transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
     background 0.35s ease,
     border-color 0.35s ease;
 }
 
+.service::after {
+  /* pink accent bar that grows on hover */
+  content: '';
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: var(--pink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 .service:hover {
   transform: translateY(-6px);
-  background: #1d1d1d;
   border-color: var(--pink);
+  box-shadow: 0 14px 30px rgba(255, 0, 127, 0.12);
+}
+
+.service:hover::after {
+  transform: scaleX(1);
+}
+
+.service:hover .service__title {
+  color: var(--pink);
 }
 
 .service__icon {
@@ -54,7 +79,8 @@
   width: 68px;
   height: 68px;
   margin-bottom: 22px;
-  border: 2px solid var(--paper);
+  border: 0;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
   transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -77,6 +103,8 @@
 
 .service__title {
   margin: 0 0 8px;
+  color: var(--text);
+  transition: color 0.25s ease;
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 800;
@@ -85,7 +113,7 @@
 
 .service__desc {
   margin: 0;
-  color: rgba(250, 248, 245, 0.66);
+  color: var(--text-2);
   font-size: 0.95rem;
 }
 

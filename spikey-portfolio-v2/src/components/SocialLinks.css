@@ -13,7 +13,7 @@
   gap: 6px;
   padding: 9px 16px;
   border-radius: 999px;
-  border: 2px solid currentColor;
+  border: 1.5px solid var(--line);
   font-weight: 700;
   font-size: 0.9rem;
   transition:
@@ -26,19 +26,17 @@ a.socials__item:hover {
   transform: translateY(-2px) rotate(-2deg);
 }
 
-.socials--light .socials__item {
-  color: var(--paper);
-}
-.socials--light a.socials__item:hover {
-  background: var(--paper);
-  color: var(--ink);
-}
+.socials--light .socials__item,
 .socials--dark .socials__item {
-  color: var(--ink);
+  color: var(--text);
+  border-color: var(--line);
 }
+
+.socials--light a.socials__item:hover,
 .socials--dark a.socials__item:hover {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--text);
 }
 
 .socials__item--placeholder {
