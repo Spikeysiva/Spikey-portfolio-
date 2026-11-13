@@ -1,7 +1,28 @@
+/* Intro screen = hero + ticker + nav. On desktop/tablet it fills the first
+   screen so the ticker + nav land near the bottom (like the reference), with
+   generous black space between the headline and the ticker. */
+.intro {
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+}
+
+@media (min-width: 701px) and (min-height: 560px) and (min-aspect-ratio: 5/4) {
+  .intro {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+  .intro > .hero {
+    flex: 1 0 auto;
+    /* content starts ~22% down the screen, not pressed against the top */
+    padding-top: clamp(28px, 22svh, 320px);
+  }
+}
+
 .hero {
   position: relative;
   background: #000000;
-  padding: clamp(20px, 3vw, 40px) 0 clamp(44px, 5vw, 72px);
+  padding: clamp(28px, 6vw, 72px) 0 clamp(40px, 6svh, 90px);
   overflow: hidden;
 }
 
@@ -19,7 +40,8 @@
      image offset = frame height × −170 / 790  (≈ −0.2152)
    Width is auto, so the original aspect ratio is always preserved. */
 .hero__portrait {
-  --ph: clamp(300px, 28vw, 420px);
+  /* ≈ 17% of the screen height; also limited by width on narrow screens */
+  --ph: clamp(170px, min(17svh, 22vw), 280px);
   display: flex;
   justify-content: center;
   width: 100%;
@@ -40,14 +62,15 @@
 
 /* ---------- Typography ---------- */
 .hero__title {
-  margin: clamp(10px, 1.2vw, 18px) 0 0;
-  max-width: 1100px;
+  margin: clamp(14px, 3.1svh, 44px) 0 0;
+  max-width: 1000px;
   font-family: 'Anton', 'Bebas Neue', 'Oswald', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   font-weight: 400; /* Anton is a single, already-heavy weight */
-  /* the longest row is ≈ 26.5 em wide — size from the viewport so each row stays on one line (≤ 1100px) */
-  font-size: min(2.6rem, calc((100vw - 2 * var(--gutter)) / 26.5));
-  line-height: 1.24;
-  letter-spacing: 0.02em;
+  /* ≈ 3% of the screen height, and never wider than the viewport allows
+     (the longest row is ≈ 25 em) so each row stays on one line */
+  font-size: min(clamp(1.5rem, 3svh, 2.6rem), calc((100vw - 2 * var(--gutter)) / 25.5));
+  line-height: 1.35;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -72,9 +95,9 @@
 .hero-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.22em;
-  margin: 0.05em 0.04em;
-  padding: 0.04em 0.4em 0.02em 0.32em;
+  gap: 0.18em;
+  margin: 0.05em 0.02em;
+  padding: 0.11em 0.32em 0.09em 0.26em;
   border-radius: 0.2em;
   color: #000000;
   line-height: 1.05;
@@ -112,16 +135,14 @@
 }
 
 /* ---------- Tablet ---------- */
-@media (max-width: 1023px) {
-  .hero__portrait {
-    --ph: clamp(240px, 34vw, 320px);
-  }
-}
 
 /* ---------- Mobile: labels stack/wrap naturally ---------- */
 @media (max-width: 700px) {
+  .hero {
+    padding-top: clamp(20px, 6vw, 32px);
+  }
   .hero__portrait {
-    --ph: clamp(220px, 62vw, 280px);
+    --ph: clamp(200px, 56vw, 260px);
   }
   .hero__row {
     display: inline;

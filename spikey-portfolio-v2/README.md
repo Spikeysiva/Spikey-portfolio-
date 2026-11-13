@@ -57,8 +57,10 @@ src/
   styles/       global.css   (design tokens, buttons, typography, animations)
 ```
 
-### Hero
-A centred hero (`Hero.tsx`) on pure black. SPIKEY's original portrait (`public/images/spikey-hero.webp`) is shown as a floating cutout with no card: its black background blends into the hero. A display-only crop frames head to upper torso, about 400px tall on desktop, and the image file is never modified. Below it are three rows of condensed Anton type, each label a link with the arrow first. The font size is calculated from the viewport width, so each row stays on one line within 1100px. Below 700px the labels wrap naturally.
+### Hero & intro screen
+The hero, pink ticker and navigation row are wrapped in `.intro`. On landscape screens (≥ 701px wide, 5:4 or wider) the intro fills the first screen. The hero content starts about 22% down, there's generous black space below the headline, and the ticker and nav sit near the bottom, matching the Hey Valentin composition. Sizes are relative to the screen: the portrait is about 17% of the height, the headline font about 3% of the height (capped by width so each row stays on one line), and the nav spacing scales the same way. Portrait-shaped tablets and phones use a compact stacked layout.
+
+SPIKEY's original portrait (`public/images/spikey-hero.webp`) is shown as a floating cutout with no card: its black background blends into the hero. A display-only crop frames head to upper torso, and the image file is never modified. Every coloured label is a link, with the arrow first.
 
 To swap in a different portrait (e.g. a waving photo), replace the file. If its framing differs, adjust the two crop numbers in `Hero.css` (`1.5177` and `-0.2152`); the comment there explains the maths.
 

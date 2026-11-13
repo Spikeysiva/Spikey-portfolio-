@@ -12,14 +12,16 @@ import { SoftwareGrid } from '../components/SoftwareGrid';
 export function HomePage({ active }: { active: string }) {
   return (
     <>
-      <Hero />
-      <Marquee />
-      {/* navigation row: directly below the pink ticker */}
-      <header className="nav-row">
-        <div className="container">
-          <Navbar active={active} />
-        </div>
-      </header>
+      {/* intro screen: hero → pink ticker → navigation (directly below the ticker) */}
+      <div className="intro">
+        <Hero />
+        <Marquee />
+        <header className="nav-row">
+          <div className="container">
+            <Navbar active={active} />
+          </div>
+        </header>
+      </div>
       <ProjectGallery />
       <ExperimentLab />
       <Services />
