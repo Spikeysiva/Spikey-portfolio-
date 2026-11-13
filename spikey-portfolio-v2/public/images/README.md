@@ -8,9 +8,7 @@ Put your portrait here, named exactly:
 public/images/spikey-hero.webp
 ```
 
-It appears in the About section ("A Little About Me"), shown with `object-fit: contain` at its original proportions (never cropped or stretched). The homepage hero is now typographic, with a hand-drawn doodle instead of a photo.
-
-Until the file exists, the About section shows a clearly labelled "Your portrait here" slot instead of a broken image.
+It appears at the top centre of the homepage hero and in the About section ("A Little About Me"). Both show it with `object-fit: contain` at its original proportions (never cropped or stretched).
 
 ## Project images (optional)
 

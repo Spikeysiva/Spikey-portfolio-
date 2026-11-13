@@ -18,7 +18,7 @@ Node 18 or newer is needed.
 
 | What | Where |
 | --- | --- |
-| **Portrait (About section)** | Add `public/images/spikey-hero.webp` (see `public/images/README.md`) |
+| **Portrait (hero + About)** | Add `public/images/spikey-hero.webp` (see `public/images/README.md`) |
 | **Contact email** | `src/data/site.ts` → `email` |
 | **Social links** | `src/data/site.ts` → `socials[].url` |
 | **Projects** | `src/data/projects.ts`: all 8 are **placeholders** with generated SVG art |
@@ -58,7 +58,7 @@ src/
 ```
 
 ### Hero
-A centred typographic hero (`Hero.tsx`) with an original hand-drawn SPIKEY doodle (`HeroDoodle.tsx`) and condensed Anton type. Every coloured label is a real link (About, Work, Lab, two project pages, Contact). The font size is calculated from the viewport width, so on desktop the three rows always fit on one line each within ~1050px. Below 1024px the labels wrap naturally.
+A centred hero (`Hero.tsx`): SPIKEY's original portrait (`public/images/spikey-hero.webp`, shown as-is with `object-fit: contain`, up to 360px tall) sits above large condensed Anton type. Every coloured label is a real link (About, Work, Lab, two project pages, Contact). The font size is calculated from the viewport width, so on desktop each of the four rows stays on one line. Below 700px the labels wrap naturally.
 
 ### Experiment Lab
 Five tall, original SVG panels (red checkerboard, orange waves, purple brush, cyan botanical, green type) live in `LabArt.tsx`. On desktop, hovering, focusing or clicking a panel expands it. On tablet and mobile they become a smooth-scrolling snap carousel with previous/next buttons.

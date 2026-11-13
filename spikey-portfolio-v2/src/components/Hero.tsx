@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { site } from '../data/site';
 import { projectHref } from '../hooks/useHashRoute';
-import { HeroDoodle } from './HeroDoodle';
 import './Hero.css';
 
 interface TagProps {
@@ -27,7 +27,16 @@ export function Hero() {
   return (
     <section id="top" className="hero" aria-labelledby="hero-title">
       <div className="hero__inner container">
-        <HeroDoodle className="hero__doodle" />
+        {/* SPIKEY's original portrait — shown as-is, never cropped or stretched */}
+        <img
+          src={site.heroImage}
+          width={1312}
+          height={1199}
+          alt="SPIKEY smiling with arms crossed, in black and white in front of a magenta circle"
+          className="hero__portrait"
+          loading="eager"
+          decoding="async"
+        />
 
         <h1 id="hero-title" className="hero__title">
           <span className="hero__row" style={{ animationDelay: '120ms' }}>
@@ -35,26 +44,24 @@ export function Hero() {
             <Tag href="#about" color="#FF007F" hint="about me">
               SPIKEY
             </Tag>
-            , A{' '}
+          </span>{' '}
+          <span className="hero__row" style={{ animationDelay: '200ms' }}>
             <Tag href="#work" color="#F05ACB" hint="see my work">
               GRAPHIC DESIGNER
-            </Tag>
-          </span>{' '}
-          <span className="hero__row" style={{ animationDelay: '220ms' }}>
-            AND{' '}
+            </Tag>{' '}
             <Tag href="#lab" color="#00BB79" hint="visit the Experiment Lab">
               VISUAL ARTIST
-            </Tag>{' '}
+            </Tag>
+          </span>{' '}
+          <span className="hero__row" style={{ animationDelay: '280ms' }}>
             <Tag href={projectHref('odd-creatures')} color="#168DF0" hint="illustration project">
               ILLUSTRATOR
             </Tag>{' '}
-            &amp;{' '}
             <Tag href={projectHref('bounce-motion-loop')} color="#FFE36E" hint="motion project">
               MOTION DESIGNER
             </Tag>
-            .
           </span>{' '}
-          <span className="hero__row" style={{ animationDelay: '320ms' }}>
+          <span className="hero__row" style={{ animationDelay: '360ms' }}>
             GOT A PROJECT IN MIND?{' '}
             <Tag href="#contact" color="#FF615B" hint="go to the contact section">
               LET'S CHAT
