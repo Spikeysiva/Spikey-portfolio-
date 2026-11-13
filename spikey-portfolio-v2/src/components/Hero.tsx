@@ -1,116 +1,66 @@
-import { useState } from 'react';
-import { ArrowDown, MessageCircle } from 'lucide-react';
-import { site } from '../data/site';
-import { CurlyArrow, Smiley, Sparkle, Squiggle, Star, Underline } from './Doodles';
+import type { ReactNode } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { projectHref } from '../hooks/useHashRoute';
+import { HeroDoodle } from './HeroDoodle';
 import './Hero.css';
 
-type ImageState = 'loading' | 'loaded' | 'error';
+interface TagProps {
+  href: string;
+  color: string;
+  /** Extra context for screen readers, e.g. "see my work". */
+  hint: string;
+  children: ReactNode;
+}
+
+/** Inline, colourful rounded label with a bold black arrow. Every label is a real link. */
+function Tag({ href, color, hint, children }: TagProps) {
+  return (
+    <a href={href} className="hero-tag" style={{ background: color }}>
+      <span className="hero-tag__text">{children}</span>
+      <ArrowRight className="hero-tag__arrow" strokeWidth={3.5} aria-hidden="true" />
+      <span className="sr-only"> ({hint})</span>
+    </a>
+  );
+}
 
 export function Hero() {
-  const [imageState, setImageState] = useState<ImageState>('loading');
-
   return (
     <section id="top" className="hero" aria-labelledby="hero-title">
-      {/* floating decorations */}
-      <Star className="hero__deco hero__deco--star1 float" color="#FF007F" />
-      <Sparkle className="hero__deco hero__deco--sparkle float float--slow" color="#5865F2" />
-      <span className="hero__deco hero__deco--dot float" aria-hidden="true" />
-      <span className="hero__deco hero__deco--ring float float--slow" aria-hidden="true" />
-      <span className="hero__deco hero__deco--tri float" aria-hidden="true" />
-
       <div className="hero__inner container">
-        <div className="hero__copy">
-          <p className="hero__hello intro-anim" style={{ animationDelay: '0ms' }}>
-            <span className="hero__wave" aria-hidden="true">
-              👋
-            </span>
-            Welcome to my little corner of the internet
-          </p>
+        <HeroDoodle className="hero__doodle" />
 
-          <h1 id="hero-title" className="hero__title intro-anim" style={{ animationDelay: '80ms' }}>
-            <span className="hero__title-line">HEY! I'M</span>{' '}
-            <span className="hero__name">
-              SPIKEY<span className="hero__dot">.</span>
-              <Underline className="hero__underline draw" color="#FFE36E" />
-            </span>
-          </h1>
-
-          <p className="hero__role intro-anim" style={{ animationDelay: '160ms' }}>
-            Graphic Designer, Visual Creative &amp;{' '}
-            <span className="marker">Professional Idea Destroyer.</span>
-          </p>
-
-          <p className="hero__lede intro-anim" style={{ animationDelay: '240ms' }}>
-            I turn ordinary ideas into extraordinary visual experiences. From branding to motion, I love
-            making things that stand out.
-          </p>
-
-          <div className="hero__ctas intro-anim" style={{ animationDelay: '320ms' }}>
-            <a href="#work" className="btn btn--pink btn--lg">
-              Explore My Work <ArrowDown size={18} aria-hidden="true" />
-            </a>
-            <a href="#contact" className="btn btn--outline btn--lg">
-              Let's Talk <MessageCircle size={18} aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-
-        <div className="hero__visual intro-anim" style={{ animationDelay: '200ms' }}>
-          <span className="hero__backdrop" aria-hidden="true" />
-          <Sparkle className="hero__visual-sparkle float float--slow" color="#FFE36E" />
-          <div className={`hero__frame hero__frame--${imageState}`}>
-            {imageState !== 'error' ? (
-              <img
-                src={site.heroImage}
-                alt="Portrait of SPIKEY in black and white against a bright pink circle"
-                className="hero__img"
-                loading="eager"
-                decoding="async"
-                onLoad={() => setImageState('loaded')}
-                onError={() => setImageState('error')}
-              />
-            ) : (
-              <div className="hero__img-missing" role="note">
-                <span className="hero__img-missing-circle" aria-hidden="true" />
-                <p>
-                  Portrait goes here
-                  <small>
-                    Add your image at <code>public/images/spikey-hero.webp</code>
-                  </small>
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* circular rotating sticker */}
-          <div className="hero__sticker" aria-hidden="true">
-            <svg viewBox="0 0 120 120" className="spin-slow">
-              <defs>
-                <path id="sticker-circle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0" />
-              </defs>
-              <text>
-                {/* textLength = circumference (2π × 44) so the phrase wraps the circle exactly */}
-                <textPath
-                  href="#sticker-circle"
-                  startOffset="0"
-                  textLength="276"
-                  lengthAdjust="spacingAndGlyphs"
-                >
-                  DESIGN ✦ MOTION ✦ BRANDING ✦ ART ✦
-                </textPath>
-              </text>
-            </svg>
-            <Star className="hero__sticker-star" color="#FF007F" />
-          </div>
-
-          <div className="hero__note" aria-hidden="true">
-            <span>that's me!</span>
-            <CurlyArrow className="hero__note-arrow" color="#FAF8F8" />
-          </div>
-
-          <Smiley className="hero__smiley float" color="#FFE36E" />
-          <Squiggle className="hero__squiggle" color="#FF814A" />
-        </div>
+        <h1 id="hero-title" className="hero__title">
+          <span className="hero__row" style={{ animationDelay: '120ms' }}>
+            HEY! I'M{' '}
+            <Tag href="#about" color="#FF007F" hint="about me">
+              SPIKEY
+            </Tag>
+            , A{' '}
+            <Tag href="#work" color="#F05ACB" hint="see my work">
+              GRAPHIC DESIGNER
+            </Tag>
+          </span>{' '}
+          <span className="hero__row" style={{ animationDelay: '220ms' }}>
+            AND{' '}
+            <Tag href="#lab" color="#00BB79" hint="visit the Experiment Lab">
+              VISUAL ARTIST
+            </Tag>{' '}
+            <Tag href={projectHref('odd-creatures')} color="#168DF0" hint="illustration project">
+              ILLUSTRATOR
+            </Tag>{' '}
+            &amp;{' '}
+            <Tag href={projectHref('bounce-motion-loop')} color="#FFE36E" hint="motion project">
+              MOTION DESIGNER
+            </Tag>
+            .
+          </span>{' '}
+          <span className="hero__row" style={{ animationDelay: '320ms' }}>
+            GOT A PROJECT IN MIND?{' '}
+            <Tag href="#contact" color="#FF615B" hint="go to the contact section">
+              LET'S CHAT
+            </Tag>
+          </span>
+        </h1>
       </div>
     </section>
   );

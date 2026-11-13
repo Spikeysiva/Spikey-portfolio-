@@ -1,6 +1,6 @@
 # Images
 
-## Hero portrait (required)
+## Portrait (required)
 
 Put your portrait here, named exactly:
 
@@ -8,9 +8,9 @@ Put your portrait here, named exactly:
 public/images/spikey-hero.webp
 ```
 
-It's used in the hero and the About section. It's shown with `object-fit: contain` at its original proportions (never cropped or stretched), on a black frame that matches the photo's black background.
+It appears in the About section ("A Little About Me"), shown with `object-fit: contain` at its original proportions (never cropped or stretched). The homepage hero is now typographic, with a hand-drawn doodle instead of a photo.
 
-Until the file exists, the site shows a clearly labelled "Portrait goes here" slot instead of a broken image.
+Until the file exists, the About section shows a clearly labelled "Your portrait here" slot instead of a broken image.
 
 ## Project images (optional)
 
