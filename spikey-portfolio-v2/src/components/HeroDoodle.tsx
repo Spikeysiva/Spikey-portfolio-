@@ -55,7 +55,10 @@ export function HeroDoodle({ className }: { className?: string }) {
         <path d="M118 135 C 124 139, 132 139, 138 135" strokeWidth="2" />
 
         {/* shoulders / t-shirt */}
-        <path d="M70 218 C 72 190, 92 172, 112 168 L 128 178 L 144 168 C 164 172, 184 190, 186 218" strokeWidth="4" />
+        <path
+          d="M70 218 C 72 190, 92 172, 112 168 L 128 178 L 144 168 C 164 172, 184 190, 186 218"
+          strokeWidth="4"
+        />
         <path d="M112 168 L 128 190 L 144 168" strokeWidth="2.5" />
         {/* tiny star on the shirt */}
         <path d="M152 196 l3 7 7 1 -5 5 1 7 -6 -4 -6 4 1 -7 -5 -5 7 -1 z" strokeWidth="2.2" />
@@ -66,7 +69,10 @@ export function HeroDoodle({ className }: { className?: string }) {
         {/* waving arm + hand */}
         <g className="doodle-wave">
           <path d="M182 186 C 200 176, 212 158, 218 136" strokeWidth="4" />
-          <path d="M210 138 C 206 124, 214 110, 222 112 C 224 102, 236 102, 236 112 C 240 104, 252 108, 248 120 C 254 120, 256 132, 246 138 C 240 146, 222 148, 214 140 Z" strokeWidth="3.5" />
+          <path
+            d="M210 138 C 206 124, 214 110, 222 112 C 224 102, 236 102, 236 112 C 240 104, 252 108, 248 120 C 254 120, 256 132, 246 138 C 240 146, 222 148, 214 140 Z"
+            strokeWidth="3.5"
+          />
           <path d="M226 114 L 230 128 M238 114 L 238 128" strokeWidth="2" opacity="0.8" />
         </g>
 
