@@ -10,7 +10,7 @@
 
 .marquee {
   overflow: hidden;
-  border-block: 2px solid var(--bg);
+  border-block: 2px solid transparent;
   padding: 16px 0;
   user-select: none;
 }
@@ -22,8 +22,13 @@
 }
 
 .marquee--pink {
-  background: var(--pink);
-  color: var(--text);
+  /* transparent strip: the black page shows through, words stay white */
+  background: transparent;
+  color: #ffffff;
+}
+
+.marquee--pink .marquee__star {
+  color: var(--pink);
 }
 .marquee--ink {
   background: var(--ink);
