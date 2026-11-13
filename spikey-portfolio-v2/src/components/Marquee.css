@@ -56,7 +56,6 @@
 }
 
 .marquee__word {
-  position: relative;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(1.5rem, 3vw, 2.4rem);
@@ -66,151 +65,10 @@
 }
 
 .marquee__star {
-  position: relative;
-  z-index: 1;
   width: 26px;
   height: 26px;
   flex-shrink: 0;
   color: var(--yellow);
-}
-
-/* ---------- Pen Tool layer (yellow Bézier path, anchors, handles, nib) ---------- */
-.marquee {
-  --pen: #ffe45c;
-}
-
-.marquee__text {
-  position: relative;
-  z-index: 1;
-}
-
-.marquee__sep {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-/* each item's pen layer reaches 14px into the strip's padding, so arcs clear the letters */
-.pen {
-  position: absolute;
-  inset: -14px 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.pen__curve {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.pen__curve path {
-  fill: none;
-  stroke: var(--pen);
-  stroke-width: 1.25px;
-  stroke-linecap: round;
-}
-
-.pen__anchor {
-  position: absolute;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-  background: #000000;
-  border: 1.25px solid var(--pen);
-}
-
-.pen--down .pen__anchor,
-.pen--down .pen__handles,
-.pen--down .pen__nib {
-  top: 92%;
-}
-
-.pen--up .pen__anchor,
-.pen--up .pen__handles {
-  top: 8%;
-}
-
-.pen--selected .pen__anchor {
-  background: var(--pen);
-}
-
-/* direction handles: thin tangent line with round handle ends */
-.pen__handles {
-  position: absolute;
-  left: 25%;
-  right: 25%;
-  height: 1px;
-  margin-top: -0.5px;
-  background: var(--pen);
-  opacity: 0.85;
-  animation: penHandles 2s ease-in-out infinite alternate;
-}
-
-.pen__handles::before,
-.pen__handles::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--pen);
-}
-
-.pen__handles::before {
-  left: -2.5px;
-}
-
-.pen__handles::after {
-  right: -2.5px;
-}
-
-/* matches the <animate> on the curve: handle length 25% → 19% → 25% over 4s */
-@keyframes penHandles {
-  from {
-    left: 25%;
-    right: 25%;
-  }
-  to {
-    left: 31%;
-    right: 31%;
-  }
-}
-
-/* pen nib, holding the right handle end as if dragging it */
-.pen__nib {
-  position: absolute;
-  left: 75%;
-  width: 18px;
-  height: 18px;
-  margin: -16.5px 0 0 -1.5px; /* puts the nib tip exactly on the handle end */
-  animation: penNib 2s ease-in-out infinite alternate;
-}
-
-.pen__nib svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  fill: #000000;
-  stroke: var(--pen);
-  stroke-width: 1.4px;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-
-@keyframes penNib {
-  from {
-    left: 75%;
-  }
-  to {
-    left: 69%;
-  }
 }
 
 .marquee--yellow .marquee__star {
