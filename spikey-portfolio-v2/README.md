@@ -58,7 +58,9 @@ src/
 ```
 
 ### Hero
-A centred hero (`Hero.tsx`): SPIKEY's original portrait (`public/images/spikey-hero.webp`, shown as-is with `object-fit: contain`, up to 360px tall) sits above large condensed Anton type. Every coloured label is a real link (About, Work, Lab, two project pages, Contact). The font size is calculated from the viewport width, so on desktop each of the four rows stays on one line. Below 700px the labels wrap naturally.
+A centred hero (`Hero.tsx`) on pure black. SPIKEY's original portrait (`public/images/spikey-hero.webp`) is shown as a floating cutout with no card: its black background blends into the hero. A display-only crop frames head to upper torso, about 400px tall on desktop, and the image file is never modified. Below it are three rows of condensed Anton type, each label a link with the arrow first. The font size is calculated from the viewport width, so each row stays on one line within 1100px. Below 700px the labels wrap naturally.
+
+To swap in a different portrait (e.g. a waving photo), replace the file. If its framing differs, adjust the two crop numbers in `Hero.css` (`1.5177` and `-0.2152`); the comment there explains the maths.
 
 ### Experiment Lab
 Five tall, original SVG panels (red checkerboard, orange waves, purple brush, cyan botanical, green type) live in `LabArt.tsx`. On desktop, hovering, focusing or clicking a panel expands it. On tablet and mobile they become a smooth-scrolling snap carousel with previous/next buttons.
