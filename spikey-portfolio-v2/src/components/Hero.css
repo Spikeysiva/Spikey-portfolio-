@@ -40,8 +40,8 @@
      image offset = frame height × −170 / 790  (≈ −0.2152)
    Width is auto, so the original aspect ratio is always preserved. */
 .hero__portrait {
-  /* ≈ 17% of the screen height; also limited by width on narrow screens */
-  --ph: clamp(170px, min(17svh, 22vw), 280px);
+  /* ≈ 21.5% of the screen height (+~27%); also limited by width on narrow screens */
+  --ph: clamp(215px, min(21.5svh, 28vw), 355px);
   display: flex;
   justify-content: center;
   width: 100%;
@@ -58,11 +58,13 @@
   height: calc(var(--ph) * 1.5177);
   margin-top: calc(var(--ph) * -0.2152);
   object-fit: contain;
+  /* horizontal shift so the portrait sits centred above the SPIKEY label (set by Hero.tsx) */
+  translate: var(--portrait-x, 0px) 0;
 }
 
 /* ---------- Typography ---------- */
 .hero__title {
-  margin: clamp(14px, 3.1svh, 44px) 0 0;
+  margin: clamp(4px, 0.8svh, 12px) 0 0;
   max-width: 1000px;
   font-family: 'Anton', 'Bebas Neue', 'Oswald', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   font-weight: 400; /* Anton is a single, already-heavy weight */
@@ -142,7 +144,7 @@
     padding-top: clamp(20px, 6vw, 32px);
   }
   .hero__portrait {
-    --ph: clamp(200px, 56vw, 260px);
+    --ph: clamp(250px, 70vw, 330px);
   }
   .hero__row {
     display: inline;

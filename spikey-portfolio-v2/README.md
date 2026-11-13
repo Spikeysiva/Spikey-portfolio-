@@ -58,7 +58,7 @@ src/
 ```
 
 ### Hero & intro screen
-The hero, pink ticker and navigation row are wrapped in `.intro`. On landscape screens (≥ 701px wide, 5:4 or wider) the intro fills the first screen. The hero content starts about 22% down, there's generous black space below the headline, and the ticker and nav sit near the bottom, matching the Hey Valentin composition. Sizes are relative to the screen: the portrait is about 17% of the height, the headline font about 3% of the height (capped by width so each row stays on one line), and the nav spacing scales the same way. Portrait-shaped tablets and phones use a compact stacked layout.
+The hero, pink ticker and navigation row are wrapped in `.intro`. On landscape screens (≥ 701px wide, 5:4 or wider) the intro fills the first screen. The hero content starts about 22% down, there's generous black space below the headline, and the ticker and nav sit near the bottom, matching the Hey Valentin composition. Sizes are relative to the screen: the portrait is about 21.5% of the height and is shifted so it sits centred directly above the SPIKEY label, the headline font about 3% of the height (capped by width so each row stays on one line), and the nav spacing scales the same way. Portrait-shaped tablets and phones use a compact stacked layout.
 
 SPIKEY's original portrait (`public/images/spikey-hero.webp`) is shown as a floating cutout with no card: its black background blends into the hero. A display-only crop frames head to upper torso, and the image file is never modified. Every coloured label is a link, with the arrow first.
 
