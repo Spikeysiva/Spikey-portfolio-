@@ -1,0 +1,77 @@
+/* clips the tilted strip so it never causes horizontal scrolling */
+.marquee-wrap {
+  overflow: hidden;
+  padding: 28px 0;
+  margin: -28px 0;
+}
+
+.marquee {
+  overflow: hidden;
+  border-block: 3px solid var(--ink);
+  padding: 16px 0;
+  user-select: none;
+}
+
+.marquee--tilt {
+  transform: rotate(-1.5deg);
+  margin: 0 -2vw;
+  width: calc(100% + 4vw);
+}
+
+.marquee--pink {
+  background: var(--pink);
+  color: var(--paper);
+}
+.marquee--ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+.marquee--yellow {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee__word {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  letter-spacing: -0.03em;
+  padding: 0 22px;
+  white-space: nowrap;
+}
+
+.marquee__star {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: var(--yellow);
+}
+
+.marquee--yellow .marquee__star {
+  color: var(--pink);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

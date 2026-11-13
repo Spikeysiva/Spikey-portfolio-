@@ -1,0 +1,54 @@
+.socials {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.socials__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+a.socials__item:hover {
+  transform: translateY(-2px) rotate(-2deg);
+}
+
+.socials--light .socials__item {
+  color: var(--paper);
+}
+.socials--light a.socials__item:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+.socials--dark .socials__item {
+  color: var(--ink);
+}
+.socials--dark a.socials__item:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.socials__item--placeholder {
+  border-style: dashed;
+  opacity: 0.75;
+  cursor: default;
+}
+
+.socials__soon {
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
