@@ -87,7 +87,12 @@ export function Hero() {
               </defs>
               <text>
                 {/* textLength = circumference (2π × 44) so the phrase wraps the circle exactly */}
-                <textPath href="#sticker-circle" startOffset="0" textLength="276" lengthAdjust="spacingAndGlyphs">
+                <textPath
+                  href="#sticker-circle"
+                  startOffset="0"
+                  textLength="276"
+                  lengthAdjust="spacingAndGlyphs"
+                >
                   DESIGN ✦ MOTION ✦ BRANDING ✦ ART ✦
                 </textPath>
               </text>
