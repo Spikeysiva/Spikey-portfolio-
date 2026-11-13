@@ -1,5 +1,5 @@
 .pp {
-  padding: calc(var(--nav-h) + 36px) 0 var(--section-y);
+  padding: clamp(28px, 4vw, 48px) 0 var(--section-y);
 }
 
 .pp--missing {

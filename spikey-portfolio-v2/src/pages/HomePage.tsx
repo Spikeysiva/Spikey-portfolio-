@@ -8,10 +8,10 @@ import { ProjectGallery } from '../components/ProjectGallery';
 import { Services } from '../components/Services';
 import { SoftwareGrid } from '../components/SoftwareGrid';
 
-export function HomePage() {
+export function HomePage({ active }: { active: string }) {
   return (
     <>
-      <Hero />
+      <Hero active={active} />
       <Marquee />
       <ProjectGallery />
       <ExperimentLab />

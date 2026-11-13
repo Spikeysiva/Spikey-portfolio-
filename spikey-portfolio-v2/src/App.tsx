@@ -64,9 +64,14 @@ export default function App() {
       >
         Skip to content
       </a>
-      <Navbar active={isHome ? active : 'work'} />
+      {/* on the home page the navigation lives at the bottom of the hero */}
+      {!isHome && (
+        <header className="container page-nav">
+          <Navbar active="work" />
+        </header>
+      )}
       <main id="main" tabIndex={-1} key={routeKey}>
-        {route.name === 'project' ? <ProjectPage slug={route.slug} /> : <HomePage />}
+        {route.name === 'project' ? <ProjectPage slug={route.slug} /> : <HomePage active={active} />}
       </main>
       <Footer />
       <Cursor />

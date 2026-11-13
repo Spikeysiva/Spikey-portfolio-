@@ -34,7 +34,6 @@
   --radius-xl: 36px;
   --max: 1320px;
   --gutter: clamp(16px, 4vw, 48px);
-  --nav-h: 80px;
   --section-y: clamp(80px, 11vw, 150px);
 
   color-scheme: dark;
@@ -65,10 +64,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
 img,
 svg {
   max-width: 100%;
@@ -97,9 +92,18 @@ main:focus {
   outline: none;
 }
 
+/* no fixed header any more — sections scroll flush to the top */
 section[id],
 form[id] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 0;
+}
+
+form[id] {
+  scroll-margin-top: 24px;
+}
+
+.container.page-nav {
+  padding-top: clamp(16px, 2vw, 28px);
 }
 
 #top {
