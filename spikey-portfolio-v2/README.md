@@ -63,7 +63,7 @@ A centred hero (`Hero.tsx`) on pure black. SPIKEY's original portrait (`public/i
 To swap in a different portrait (e.g. a waving photo), replace the file. If its framing differs, adjust the two crop numbers in `Hero.css` (`1.5177` and `-0.2152`); the comment there explains the maths.
 
 ### Navigation
-An editorial bar (`Navbar.tsx`) with a bold SPIKEY® logo on the left and five colour labels on the right: HOME green, MY WORK blue, ABOUT orange, SERVICES pink, CONTACT coral. On the home page it sits at the bottom of the full-screen hero. On project pages it sits at the top. There is no fixed header. The current section's label gets a subtle darker underline. On mobile the logo sits above the labels, which form a 3 + 2 grid.
+An editorial bar (`Navbar.tsx`) with a bold SPIKEY® logo on the left and five colour labels on the right: HOME green, MY WORK blue, ABOUT orange, SERVICES pink, CONTACT coral. On the home page it's its own full-width black row, directly below the pink ticker (hero → ticker → navigation → projects). On project pages it sits at the top. There is no fixed header. The current section's label gets a subtle darker underline. On mobile the logo sits above the labels, which form a 3 + 2 grid.
 
 ### Experiment Lab
 Five tall, original SVG panels (red checkerboard, orange waves, purple brush, cyan botanical, green type) live in `LabArt.tsx`. On desktop, hovering, focusing or clicking a panel expands it. On tablet and mobile they become a smooth-scrolling snap carousel with previous/next buttons.

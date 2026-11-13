@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { site } from '../data/site';
 import { projectHref } from '../hooks/useHashRoute';
-import { Navbar } from './Navbar';
 import './Hero.css';
 
 interface TagProps {
@@ -24,7 +23,7 @@ function Tag({ href, color, hint, children }: TagProps) {
   );
 }
 
-export function Hero({ active }: { active: string }) {
+export function Hero() {
   return (
     <section id="top" className="hero" aria-labelledby="hero-title">
       <div className="hero__inner container">
@@ -77,10 +76,6 @@ export function Hero({ active }: { active: string }) {
           </span>
         </h1>
       </div>
-
-      <header className="hero__nav container">
-        <Navbar active={active} />
-      </header>
     </section>
   );
 }

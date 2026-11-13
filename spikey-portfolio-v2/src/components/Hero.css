@@ -1,19 +1,8 @@
 .hero {
   position: relative;
-  /* full intro screen: content near the top, navigation near the bottom */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100svh;
   background: #000000;
-  padding: clamp(20px, 3vw, 40px) 0 clamp(20px, 2.4vw, 32px);
+  padding: clamp(20px, 3vw, 40px) 0 clamp(44px, 5vw, 72px);
   overflow: hidden;
-}
-
-/* generous black space between the intro and the navigation */
-.hero__nav {
-  margin-top: auto;
-  padding-top: clamp(48px, 7vw, 96px);
 }
 
 .hero__inner {

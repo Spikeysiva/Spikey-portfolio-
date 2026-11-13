@@ -1,6 +1,9 @@
 /* clips the tilted strip so it never causes horizontal scrolling */
 .marquee-wrap {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
+  background: #000000; /* matches the black hero above and nav row below */
   padding: 28px 0;
   margin: -28px 0;
 }

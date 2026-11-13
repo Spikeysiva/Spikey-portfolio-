@@ -1,3 +1,13 @@
+/* Full-width black row that sits directly below the pink ticker.
+   The ticker's wrapper overlaps 28px into this row (to clip its tilt), so the
+   top padding includes that overlap and the ticker paints above this row. */
+.nav-row {
+  position: relative;
+  z-index: 0;
+  background: #000000;
+  padding: calc(28px + clamp(8px, 1vw, 14px)) 0 clamp(18px, 2.2vw, 30px);
+}
+
 /* Editorial navigation bar — logo left, colour labels right, one row. */
 .sitenav {
   display: flex;
