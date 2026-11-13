@@ -4,10 +4,10 @@
 
 :root {
   /* surfaces */
-  --bg: #131313; /* main background */
-  --surface: #1b1b1b; /* secondary background */
-  --card: #222222; /* cards */
-  --night: #0c0c0c; /* footer / deepest */
+  --bg: #000000; /* main background — pure black site-wide */
+  --surface: #111111; /* small inset elements: chips, form fields */
+  --card: #1a1a1a; /* cards & content containers — slightly lighter for contrast */
+  --night: #000000; /* footer */
   --line: #383438; /* borders */
 
   /* text */

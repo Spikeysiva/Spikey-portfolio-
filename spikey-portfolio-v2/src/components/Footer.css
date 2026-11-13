@@ -1,7 +1,6 @@
 .footer {
   background: var(--night);
   color: var(--text);
-  border-top: 1px solid var(--line);
   padding: clamp(56px, 7vw, 96px) 0 28px;
   margin-top: clamp(8px, 1.5vw, 20px);
 }

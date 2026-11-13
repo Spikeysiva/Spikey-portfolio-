@@ -35,9 +35,9 @@ The whole site uses a dark theme. Colours are CSS variables in `src/styles/globa
 
 | Token | Value | Use |
 | --- | --- | --- |
-| `--bg` | `#131313` | main background |
-| `--surface` | `#1B1B1B` | secondary background (Services / Contact panels) |
-| `--card` | `#222222` | cards, form, buttons |
+| `--bg` | `#000000` | main background (every section + footer) |
+| `--surface` | `#111111` | small inset elements (chips, form fields) |
+| `--card` | `#1A1A1A` | cards & content containers |
 | `--text` / `--text-2` | `#FAF8F8` / `#B8B5B8` | primary / secondary text |
 | `--line` | `#383438` | borders |
 | `--pink` / `--magenta` | `#FF007F` / `#C31FA6` | main / secondary accent |

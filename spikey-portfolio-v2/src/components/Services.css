@@ -5,7 +5,7 @@
 .services__panel {
   position: relative;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--bg);
   color: var(--text);
   border: 1px solid var(--line);
   border-radius: clamp(32px, 5vw, 64px);
